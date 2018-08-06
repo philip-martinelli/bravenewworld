@@ -2,6 +2,8 @@ view: users {
   #sql_table_name: demo_db.users ;;
   derived_table: {
     sql:  select * from demo_db.users ;;
+    persist_for: "1 hour"
+    indexes: ["id"]
   }
 
   dimension: id {
