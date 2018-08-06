@@ -1,10 +1,18 @@
 view: users {
-  sql_table_name: demo_db.users ;;
+  #sql_table_name: demo_db.users ;;
+  derived_table: {
+    sql:  select * from demo_db.users ;;
+  }
 
   dimension: id {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+  }
+
+
+  dimension: sql_runner_test {
+    sql: "1" ;;
   }
 
   dimension: age {
